@@ -24,6 +24,9 @@ module.exports = {
   findAllClass(){
     return Classify.find().addCreatedAt().sort({_id: -1}).exec();
   },
+  findOneClass(classId){
+    return Classify.findOne({_id: classId}).addCreatedAt().exec();
+  },
   createArticle(data){
     return Article.create(data).exec();
   },
