@@ -1,5 +1,23 @@
 {
-  "name": "$package_name$",
-  "version": "0.0.1",
-  $END$
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a blog server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'server'"
+  },
+  "author": "ljl",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect-mongo": "^1.3.2",
+    "dot-env": "0.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "moment": "^2.18.1",
+    "mongolass": "^2.4.5",
+    "objectid-to-timestamp": "^1.3.0",
+    "sha1": "^1.1.1"
+  }
 }
