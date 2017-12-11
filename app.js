@@ -5,13 +5,16 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
-var routes = require('./routes')
+var routes = require('./routes');
+
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
 
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-requested-Width,Content-Type');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,DELETE,OPTIONS,POST')
-  res.next();
+  next();
 })
 routes(app);
 
